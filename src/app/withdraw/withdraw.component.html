@@ -1,0 +1,47 @@
+<br><br><br><div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+      
+      </div>
+      <div class="col-sm-6">
+          <div class="row">
+              <h3 style="text-align:center"><b>Balance in Ether</b></h3>
+              <br>
+              <h2 style="text-align:center">{{balance}}</h2>
+            <br>                       
+            <br> <br><br><br>
+            <br> <br>
+            <h3 style="text-align: center"><b>Withdraw Balance</b></h3><br>
+            <br>  <br>                       
+            <br> 
+            <div class="group">      
+                <input type="text"  #withdrawamount required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label >Enter Amount to Withdraw</label>
+              </div>
+            <div class="row">
+                <div class="col-sm-3">
+
+                  </div>
+                  <div class="col-sm-6">
+                      <button  type="button" class="btn btn-primary" (click)="withdraw(withdrawamount.value)">Withdraw</button>                          
+          
+                    </div>
+                    <div class="col-sm-3">
+
+                      </div>
+
+            </div>
+
+             
+           
+  </div>
+      </div>
+      <div class="col-sm-3">
+      
+      </div>
+  
+    </div>
+  </div>
+  <ngx-spinner></ngx-spinner>

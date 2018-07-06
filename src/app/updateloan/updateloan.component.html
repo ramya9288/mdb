@@ -1,0 +1,66 @@
+
+<br>
+<br>
+<div class="container-fluid">
+    <div class="row">
+    <div class="col-sm-3">
+        <h3>Update Loan Details</h3><br>
+          <div class="col-sm-12"> 
+            <div class="group">      
+                <input type="text"  #loanid required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label >Enter Loan Id</label>
+              </div>
+          </div>  
+          <div class="col-sm-12">
+
+              <div class="group">      
+                  <input type="text"  #loanvalue required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label >Enter amount</label>
+                </div>
+            </div>
+          <div class="col-sm-12">
+            <br>
+              <button class="btn btn-info" (click)="updateloan(loanid.value,loanvalue.value)">Update</button>
+            </div>
+    </div>
+
+    <div class="col-sm-9">
+        <h4>Loan Details</h4>
+          <table class="table" style="overflow-y:auto;display:block;height:300px;">
+            <thead class="thead-dark">
+                <tr>
+                  <th>Loan ID</th>
+                  <th> Borrower ID</th>
+                  <th>Borrower Loan Amount(Rs)</th>
+                  <th> Borrower Interest Rate</th>
+                  <th>Loan Duration</th>
+                  <th>Asset ID</th>
+                  <th>Asset Details</th>
+                  <th>Asset Amount (Rs)</th>
+                  <th>Borrower Paid</th>
+                </tr>
+              </thead>
+              <tbody id="loantable">
+                  <tr *ngFor="let issuer of updated_loan_details">
+                      <td>{{ issuer.loanid }}</td>
+                      <td>{{ issuer.borrowerid }}</td>
+                      <td>{{ issuer. borrowerloanamt}}</td>
+                      <td>{{ issuer.borrowerintrest }}</td>
+                      <td>{{ issuer.loanduration }}</td>
+                      <td>{{ issuer.assetid }}</td>
+                      <td>{{ issuer.assetdetails }}</td>
+                      <td>{{ issuer.assetamt }}</td>
+                      <td>{{ issuer.borrowerpaid }}</td>
+                   </tr>
+               </tbody>
+          </table>
+        
+      </div>
+     
+    </div>
+</div>
+<ngx-spinner></ngx-spinner>

@@ -1,0 +1,65 @@
+<div class="container">
+  <br><br>
+  <div class="row">
+    <div class="col-sm-4">
+            <h4><b>Bank Details</b></h4>
+            <table class="table" style="overflow-y:auto;display:block;height:600px;">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>Bank ID</th>
+                    <th>Bank Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let bank of banklist" >
+                    <td>{{ bank.bankid }}</td>
+                    <td>{{ bank.bankname }}</td>
+                  </tr>
+                </tbody>
+            </table>
+    </div>
+    <div class="col-sm-5">
+
+            <h3>Borrower Registeration</h3>
+            <br>
+            <div class="col-sm-12">
+              <div class="group">      
+                <input class="input" type="text"  #brwrname required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label >Enter Borrower Name</label>
+              </div>
+            </div>
+            <div class="col-sm-12"> 
+              <div class="group">      
+                  <input class="input" type="text"  #bankid required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Enter Bank ID</label>
+              </div>
+            </div> 
+            <div class="col-sm-12"> 
+              <button class="btn btn-success" (click)="get_borrower_id(brwrname.value,bankid.value)">Register</button>
+              <br><br>
+              </div>
+    </div>
+    <div class="col-sm-3">
+            <h4><b>Borrower Details</b></h4>
+            <table class="table" style="overflow-y:auto;display:block;height:600px;">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>Borrower ID</th>
+                    <th>Borrower Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let borrower of borrowerlist" >
+                    <td>{{ borrower.borrowerid }}</td>
+                    <td>{{ borrower.borrowername }}</td>
+                  </tr>
+                </tbody>
+            </table>
+    </div>
+  </div>
+</div>
+<ngx-spinner></ngx-spinner>

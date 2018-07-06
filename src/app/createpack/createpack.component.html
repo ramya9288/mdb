@@ -1,0 +1,94 @@
+<br>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3">
+            <h3>Create Pool:</h3><br>
+            <div class="alert alert-info">
+                <strong>Info!</strong> You can enter multiple loan Id's &nbsp;<strong>(ex:- 1,2,3)</strong>.
+            </div><br>    
+                    <div class="col-sm-12">
+                <div class="group">      
+                        <input type="text"  #loanid required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label >Enter Loan id</label>
+                    </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="group">      
+                        <input type="text"  #totvalue required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label >Enter pool Amount(in ether)</label>
+                    </div>
+                </div>
+            <div class="col-sm-12">
+                <br>
+                <button class="btn btn-info" (click)="createpool(loanid.value,totvalue.value)">Create</button>
+                </div>
+        </div>
+        <div class="col-sm-9">
+            <h4>Loan Details</h4>
+            <table class="table" style="overflow-y:auto;display:block;height:300px;">
+                <thead class="thead-dark">
+                    <tr>
+                    <th>Loan ID</th>
+                    <th> Borrower ID</th>
+                    <th>Borrower Loan Amount(Rs)</th>
+                    <th> Borrower Interest Rate</th>
+                    <th>Loan Duration</th>
+                    <th>Asset ID</th>
+                    <th>Asset Details</th>
+                    <th>Asset Amount (Rs)</th>
+                    <th>Borrower Paid</th>
+                    </tr>
+                </thead>
+                <tbody id="loantable">
+                    <tr *ngFor="let issuer of loan_details">
+                        <td>{{ issuer.loanid }}</td>
+                        <td>{{ issuer.borrowerid }}</td>
+                        <td>{{ issuer. borrowerloanamt}}</td>
+                        <td>{{ issuer.borrowerintrest }}</td>
+                        <td>{{ issuer.loanduration }}</td>
+                        <td>{{ issuer.assetid }}</td>
+                        <td>{{ issuer.assetdetails }}</td>
+                        <td>{{ issuer.assetamt }}</td>
+                        <td>{{ issuer.borrowerpaid }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5">
+          
+        </div>
+    <div class="col-sm-2">
+        <h4>Pool Details</h4>
+          <table class="table" style="overflow-y:auto;display:block;height:300px;">
+              <thead class="thead-dark">
+                <tr>
+                  <th>Pool ID</th>
+                  <th>Total Value</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="pooltable">
+                  <tr *ngFor="let pool of pool_details" [ngSwitch]="pool.status">
+                      <td>{{ pool.id }}</td>
+                      <td>{{ pool.value }}</td>
+                      <td *ngSwitchCase='true'>sold</td>
+                      <td *ngSwitchCase='false'>Available</td>
+                   </tr>
+               </tbody>
+            </table>
+          
+        </div>
+     
+     
+    </div>
+       
+</div>
+<ngx-spinner></ngx-spinner>

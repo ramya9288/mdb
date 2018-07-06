@@ -1,0 +1,55 @@
+
+  <br>
+<br>
+<div class="container-fluid" >
+
+  <div class="row">
+
+
+
+<div class="col-sm-4"> 
+
+
+
+  
+</div>
+
+
+
+  <div class="col-sm-6">
+      <h3>Bank Registeration</h3>
+<br>
+    <div class="col-sm-12">
+  
+        <div class="group">      
+            <input class="input" type="text"  #bankname required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Enter Bank Name</label>
+          </div>
+    </div>
+    <div class="col-sm-12">
+      <br>
+        <button class="btn btn-success" (click)="get_bank_Id(bankname.value)">Register</button>
+      </div>
+      
+    <div class="col-sm-3">
+        <br><br>
+        <h4>Generated Bank Id</h4>
+        <input type="text" value={{bankid}} class="form-control" readonly>        
+  </div>
+  
+
+ 
+
+</div>
+
+  <div class="col-sm-3">
+      
+  </div>
+<!-- row2 -->
+
+</div>
+
+
+<ngx-spinner></ngx-spinner>

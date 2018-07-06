@@ -1,0 +1,148 @@
+<br>
+
+<div class="container-fluid">
+  <div class="row">
+        <div class="col-sm-5">
+
+                    <h3>Add Loan Details:</h3><br>
+        
+                    <div class="col-sm-12">
+                                    
+                    <div class="col-sm-6">
+                       
+                        <div class="group">      
+                            <input type="text"  #borrowerid required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label >Enter Borrower Id</label>
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                        
+                           
+                            <div class="group">      
+                                <input type="text"  #borrowerloanAmount required>
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label >Enter Borrower Loan Amount(Rs)</label>
+                              </div>
+                            
+                          </div>
+                  
+                      </div>
+                  
+                        <div class="col-sm-12">
+                                <div class="col-sm-6">
+                                        <!-- <br> -->
+                         
+                                        <div class="group">      
+                                            <input type="text"  #interestrate required>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label>Enter Interest rate</label>
+                                          </div>
+        
+                                      </div>
+                        
+                            <div class="col-sm-6">
+                                <!-- <br> -->
+                             
+                                <div class="group">      
+                                    <input type="text"  #loanduration required>
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label >Enter Loan Duration(in months)</label>
+                                  </div>
+        
+                              </div>
+        
+                          </div>
+                  
+                          <div class="col-sm-12">
+                           
+                                <div class="col-sm-6">
+                                    <!-- <br> -->
+                                 
+                                    <div class="group">      
+                                        <input type="text"  #assetdetails required>
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label >Enter Asset Details</label>
+                                      </div>
+                  
+                                  </div>
+        
+                                  <div class="col-sm-6">
+                                      <br>
+                          
+                  
+                                      <div class="group">      
+                                          <input type="text"  #assetamt required>
+                                          <span class="highlight"></span>
+                                          <span class="bar"></span>
+                                          <label >Enter Asset Amount(in rupees)</label>
+                                        </div>
+        
+                                    </div>
+        
+                                </div>
+                  
+                                <div class="col-sm-12">
+                                 
+                                       
+                                    <div class="col-sm-6">
+                                        <br>
+                         
+                                        <div class="group">      
+                                            <input type="text"  #borrowerpaid required>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label >Enter Borrower Paid(in rupees)</label>
+                                          </div>
+        
+                                      </div>
+                                      <div class="col-sm-6">
+                                            <br>
+                                        <button class="btn btn-info" (click)="upload(borrowerid.value,borrowerloanAmount.value,interestrate.value,loanduration.value,assetdetails.value,assetamt.value,borrowerpaid.value)">Upload Details</button>     
+                                        </div>    
+                                    </div>
+                                                                                                 
+                               
+
+    </div>
+    <div class="col-sm-7">
+<div style="overflow-y:auto;display:block;height:300px;">
+        <table class="table" >
+                <thead class="thead-dark">
+                  <tr>
+                    <th>Loan ID</th>
+                    <th> Borrower ID</th>
+                    <th>Borrower Loan Amount(Rs)</th>
+                    <th> Borrower Interest Rate</th>
+                    <th>Loan Duration</th>
+                    <th>Asset ID</th>
+                    <th>Asset Details</th>
+                    <th>Asset Amount (Rs)</th>
+                    <th>Borrower Paid</th>
+                  </tr>
+                </thead>
+                <tbody id="loantable">
+                    <tr *ngFor="let issuer of loan_details">
+                        <td>{{ issuer.loanid }}</td>
+                        <td>{{ issuer.borrowerid }}</td>
+                        <td>{{ issuer. borrowerloanamt}}</td>
+                        <td>{{ issuer.borrowerintrest }}</td>
+                        <td>{{ issuer.loanduration }}</td>
+                        <td>{{ issuer.assetid }}</td>
+                        <td>{{ issuer.assetdetails }}</td>
+                        <td>{{ issuer.assetamt }}</td>
+                        <td>{{ issuer.borrowerpaid }}</td>
+                     </tr>
+                 </tbody>
+              </table>
+</div>
+
+    </div>
+</div>
+</div>
+<ngx-spinner></ngx-spinner>

@@ -1,0 +1,56 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo">
+
+    <!-- Navbar brand -->
+    <logo><img class="animated zoomInRight " src="../assets/chainflux.png" style="height:40px;background-color:beige"/></logo>
+
+    <!-- Collapsible content -->
+    <links>
+
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+                <a class="nav-link waves-light"  routerLink="/home" mdbWavesEffect>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home<span class="caret"></span></a>
+            </li>
+              <!-- Dropdown -->
+              <li class="nav-item dropdown" dropdown>
+                <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+               ISSUER<span class="caret"></span></a>
+                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                    <a class="dropdown-item waves-light" mdbWavesEffect href="#" routerLink="/addbank">Add Bank</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect href="#" routerLink="/addborrower">Add Borrower</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect href="#" routerLink="/addloan">Add Loan</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect href="#" routerLink="/updateloan">Update Loan</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect href="#" routerLink="/createpack">Create Pool</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect href="#" routerLink="/withdraw">Withdraw</a>
+                    <!-- <div class="divider dropdown-divider"></div> -->
+                    <!-- <a class="dropdown-item waves-light" mdbWavesEffect href="#" routerLink="/table">Separated link</a> -->
+                </div>
+            </li>
+
+
+            <li class="nav-item dropdown" dropdown>
+                <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+              SPV<span class="caret"></span></a>
+                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                    <a class="dropdown-item waves-light" mdbWavesEffect href="#" routerLink="/spv">Purchase pool</a>
+                    </div>
+            </li>
+
+              <li class="nav-item dropdown" dropdown>
+                <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+              INVESTOR<span class="caret"></span></a>
+                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                    <a class="dropdown-item waves-light" mdbWavesEffect href="#" routerLink="/investor">Purchase pool</a>
+                    </div>
+            </li>
+          
+
+        </ul>
+
+        <!-- Links -->
+    </links>
+    <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->

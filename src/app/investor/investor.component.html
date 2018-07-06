@@ -1,0 +1,87 @@
+<br>
+<br>
+<div class="container-fluid">
+  <div class="row">
+ <div class="col-sm-3">
+    <h3><b>Purchase Pool</b></h3><br>
+            <div class="col-sm-12">
+              
+           
+                    <div class="group">      
+                        <input type="text"  #poolid required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label >Enter pool Id</label>
+                      </div>
+                
+            </div>
+    
+            
+            <div class="col-sm-12">
+               <br> 
+                <button class="btn btn-success" (click)="investor_purchase_pool(poolid.value)">Purchase</button>
+            </div>
+ </div>
+ <div class="col-sm-2">
+    <h4><b>Purchased Pools</b></h4>
+    <table class="table" style="overflow-y:auto;display:block;;height:600px">
+      <thead class="thead-dark">
+        <tr>
+          <th>Pool ID</th>
+          <th>Pool Value</th>
+        </tr>
+      </thead>
+      <tbody id="purchasedpools">
+        <tr *ngFor="let pool of purchased_pools">
+          <td>{{ pool.poolid }}</td>
+          <td>{{ pool.poolvalue }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+ </div>
+ <div class="col-sm-2">
+    <h4><b>Available Pools</b></h4>
+    <table class="table" style="overflow-y:auto;display:block;height:600px">
+      <thead class="thead-dark">
+        <tr>
+          <th>Pool ID</th>
+          <th>Pool Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pool of available_pools" >
+          <td>{{ pool.poolid }}</td>
+          <td>{{ pool.poolvalue }}</td>
+        </tr>
+      </tbody>
+    </table>
+ </div>
+
+ <div class="col-sm-2">
+    <h4><b>Loans of Pool</b></h4>
+            <table class="table" style="overflow-y:auto;display:block;height:600px">
+        <thead class="thead-dark">
+          <tr><th>Pool Id</th><th>Loan Ids</th></tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let obj of loans_of_pool">
+            <td>{{obj.poolid}}</td>
+            <td>{{obj.loanids}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+ </div>
+
+ <div class="col-sm-2">
+   
+    <h4 style="text-align:center"><b>Amount Gained</b></h4>
+    <h1 style="text-align:center">{{investor_gain_amount}}</h1>
+
+
+ </div>
+</div>
+ 
+</div>
+<ngx-spinner></ngx-spinner>
