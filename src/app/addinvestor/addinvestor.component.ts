@@ -19,9 +19,12 @@ export class AddinvestorComponent implements OnInit, OnDestroy {
 
   constructor(private ls:LoanServiceService,private router: Router, private spinner: NgxSpinnerService) { }
 
-  investor_register() {
-    this.spinner.show();
-    this.ls.getAccount().then(address =>{
+  investor_register() 
+  {
+     if((document.getElementById('verify') as HTMLInputElement).checked == true)
+    {
+      this.spinner.show();
+      this.ls.getAccount().then(address =>{
       this.ls.register_investor(address).then(res =>{
         this.spinner.hide();
         if(res == 0) {
@@ -38,6 +41,10 @@ export class AddinvestorComponent implements OnInit, OnDestroy {
       })
     })
   }
+  else{
+    alert('please confirm')
+  }
+}
 
   ngOnInit() {
        let meta = this;

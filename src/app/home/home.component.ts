@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import wow from 'wow.js';
+
+// Animations init
+// new WOW().init();
 
 @Component({
   selector: 'app-home',
@@ -13,3 +17,5 @@ export class HomeComponent implements OnInit {
   }
 
 }
+
+

@@ -32,6 +32,7 @@
     "rxjs": "^6.0.0-rc.1",
     "web-animations-js": "^2.3.1",
     "web3": "^0.20.0",
+    "wow.js": "^1.2.2",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {

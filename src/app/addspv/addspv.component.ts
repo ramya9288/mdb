@@ -12,18 +12,19 @@ import { NgxSpinnerService } from "ngx-spinner";
   styleUrls: ['./addspv.component.scss']
 })
 export class AddspvComponent implements OnInit {
-  public _web3: any;
+  public  _web3: any;
   public account:string;
   public balance:number;
   public id1;
-  constructor(private ls:LoanServiceService,private router:Router,private spinner:NgxSpinnerService) { }
+  constructor(private ls:LoanServiceService,private route:Router,private spinner:NgxSpinnerService) { }
 
   spv_registeration()
+  {
+     if((document.getElementById('verify') as HTMLInputElement).checked == true)
   {
     this.spinner.show();
     this.ls.getAccount().then(address=>{
       this.ls.register_spv(address).then(res=>{
-        this.spinner.hide();
         if(res == 0){
           alert("You Rejected this Transaction")
         }
@@ -33,10 +34,14 @@ export class AddspvComponent implements OnInit {
         else if(res == 1)
         {            
           alert("You Successfully Registered As An SPV")
-          this.router.navigate(['spv'])
+          this.route.navigate(['spv'])
         }
       })
     })
+  }
+  else{
+       alert('please confirm')
+      }
   }
   
   ngOnInit() {
@@ -51,14 +56,14 @@ export class AddspvComponent implements OnInit {
                   if (meta._web3.eth.accounts[0] !== meta.account) {
                       meta.account = meta._web3.eth.accounts[0];
                       if (meta._web3.eth.accounts[0] === undefined) {
-                          meta.router.navigate(['metamask']);
+                          meta.route.navigate(['metamask']);
                           clearInterval(this.interval);
                       } else {
                           window.location.reload(true);             
                                }
                   }
               } else {
-                  meta.router.navigate(['metamask']);
+                  meta.route.navigate(['metamask']);
               }
              }, 200);
           });
@@ -72,3 +77,6 @@ export class AddspvComponent implements OnInit {
      }
 
 }
+
+
+

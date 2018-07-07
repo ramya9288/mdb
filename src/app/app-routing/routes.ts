@@ -77,7 +77,7 @@ export  const  routes: Routes = [
    
     { 
         path: '',
-        redirectTo: '/addbank',
+        redirectTo: '/home',
         pathMatch: 'full'
       }
 ];
